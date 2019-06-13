@@ -6,6 +6,8 @@
     <%@ page import="pknu.it.MemberDTO" %>
     <%@ page import="pknu.it.TypeDAO" %>
     <%@ page import="pknu.it.MemberDTO" %>
+    <%@ page import="pknu.it.RestaurantDAO" %>
+    <%@ page import="pknu.it.RestaurantDTO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +21,9 @@ ArrayList<MemberDTO> mdto = mdao.getAllData();
 
 TypeDAO tdao = new TypeDAO();
 ArrayList<TypeDTO> tdto = tdao.getAllData();
+
+RestaurantDAO rdao = new RestaurantDAO();
+ArrayList<RestaurantDTO> rdto = rdao.getAllData();
 %>
 <%
 for(int i = 0; i < mdto.size(); i++){
@@ -35,5 +40,14 @@ for(int i = 0; i < tdto.size(); i++){
 <%
 }
 %>
+
+<%
+for(int i = 0; i < rdto.size(); i++){
+%>
+<%=rdto.get(i).toString() %><br>
+<%
+}
+%>
+
 </body>
 </html>
