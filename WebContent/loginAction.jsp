@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    <%@ page import="pknu.it.MemberDAO" %>
+    <%@ page import="pknu.it.MemberDTO" %>
+    <%@page import="java.util.ArrayList"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+String id = request.getParameter("id");
+String pw = request.getParameter("pw");
+System.out.println(id+ " : "+pw);
+
+MemberDAO mdao = new MemberDAO();
+int result = mdao.login(id, pw);
+
+
+String print;
+if(result == 1){
+	print = "환영합니다.";
+}else if(result==-1){
+	print="비밀번호가 틀렸습니다.";
+}else if(result==0){
+	print="존재하지 않는 아이디입니다.";
+}else{
+	print="데이터베이스 오류";
+}
+%>
+<%=print %>
+</body>
+</html>

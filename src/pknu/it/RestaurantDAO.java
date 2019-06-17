@@ -4,9 +4,23 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class RestaurantDAO {
+	
+	private String url;
+	private String user;
+	private String pass;
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
 	public RestaurantDAO() {
+		
+		url = "jdbc:oracle:thin:@localhost:1521:xe";
+		user = "test";
+		pass = "test";
+		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, pass);
 		}catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
@@ -14,36 +28,24 @@ public class RestaurantDAO {
 	}
 	
 	public ArrayList<RestaurantDTO> getAllData(){
-		ArrayList<RestaurantDTO> list = new ArrayList();
-		
-		Connection connect = null;
-		Statement state = null;
-		ResultSet result = null;
-		
+		ArrayList<RestaurantDTO> list = new ArrayList<>();
+		String sql = "select * from restaurant";
+				
 		try {
-			connect = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "test", "test");
-			state = connect.createStatement();
-			result = state.executeQuery("select * from restaurant");
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
 			
-			while(result.next()) {
-				int rno = result.getInt("rno");
-				int type = result.getInt("type");
-				String rname = result.getString("rname");
-				String addr = result.getString("addr");
-				String call = result.getString("call");
+			while(rs.next()) {
+				int rno = rs.getInt("rno");
+				int type = rs.getInt("type");
+				String rname = rs.getString("rname");
+				String addr = rs.getString("addr");
+				String call = rs.getString("call");
 				
 				list.add(new RestaurantDTO(rno, type, rname, addr, call));
 			}
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
-		}finally {
-			try {
-				if(connect!=null)connect.close();
-				if(state!=null)state.close();
-				if(result!=null)result.close();
-			}catch(Exception e) {
-				System.out.println(e.getMessage());
-			}
 		}
 		
 		return list;
