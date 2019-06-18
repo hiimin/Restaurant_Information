@@ -18,9 +18,9 @@ System.out.println(id+ " : "+pw);
 MemberDAO mdao = new MemberDAO();
 int result = mdao.login(id, pw);
 
-
 String print;
 if(result == 1){
+	session.setAttribute("id", id);
 	print = "환영합니다.";
 }else if(result==-1){
 	print="비밀번호가 틀렸습니다.";
@@ -31,5 +31,6 @@ if(result == 1){
 }
 %>
 <%=print %>
+<%=session.getAttribute("id") %>
 </body>
 </html>
