@@ -22,5 +22,13 @@ public class TypeDTO {
 		return "TypeDTO [tno=" + tno + ", tname=" + tname + "]";
 	}
 
+	public int getTno() {
+		return tno;
+	}
+
+	public String getTname() {
+		return tname;
+	}
+
 	
 }

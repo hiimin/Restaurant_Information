@@ -12,6 +12,7 @@
 </head>
 <body>
 <jsp:include page="menubar.jsp"></jsp:include>
+<jsp:include page="type.jsp"></jsp:include>
 <%
 String id = request.getParameter("id");
 String pw = request.getParameter("pw");
