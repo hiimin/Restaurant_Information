@@ -8,6 +8,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
+<link rel = "stylesheet" href="/css/style.css">
 <title>Insert title here</title>
 </head>
 <body>

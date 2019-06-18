@@ -6,10 +6,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel = "stylesheet" type="text/css" href="style.css">
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="menubar.jsp"></jsp:include>
 <%
 String id = request.getParameter("id");
 String pw = request.getParameter("pw");
@@ -20,6 +22,7 @@ int result = mdao.login(id, pw);
 
 String print;
 if(result == 1){
+	session.setMaxInactiveInterval(600);
 	session.setAttribute("id", id);
 	print = "환영합니다.";
 }else if(result==-1){
