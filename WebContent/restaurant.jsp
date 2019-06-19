@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel = "stylesheet" type="text/css" href="style.css">
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
@@ -17,13 +18,24 @@ String type = request.getParameter("type");
 RestaurantDAO rdao = new RestaurantDAO();
 ArrayList<RestaurantDTO> typeRestaurant = rdao.typeRestaurant(type);
 %>
+<table border=1>
+<tr>
+<th>No.</th>
+<th>음식점명</th>
+</tr>
 <%
 for(int i = 0; i < typeRestaurant.size(); i++){
-%>
-<%=typeRestaurant.get(i).toString() %><br>
+	String rname = typeRestaurant.get(i).getRname();
+	String rno = String.valueOf(typeRestaurant.get(i).getRno());
+	%>
+	<tr onclick="location.href='#'">
+	<td><%=i+1 %></td>
+	<td><%=rname %></td>
+	</tr>
 <%
 }
 %>
 
+</table>
 </body>
 </html>

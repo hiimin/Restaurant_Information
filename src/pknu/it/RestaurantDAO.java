@@ -3,6 +3,8 @@ package pknu.it;
 import java.sql.*;
 import java.util.ArrayList;
 
+import com.sun.xml.internal.ws.Closeable;
+
 public class RestaurantDAO {
 	
 	private String url;
@@ -74,5 +76,16 @@ public class RestaurantDAO {
 		}
 		
 		return list;
+	}
+	
+	public void close() {
+		try {
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

@@ -33,6 +33,26 @@ public class RestaurantDTO {
 		this.rname = rname;
 	}
 
+	public int getRno() {
+		return rno;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public String getRname() {
+		return rname;
+	}
+
+	public String getAddr() {
+		return addr;
+	}
+
+	public String getCall() {
+		return call;
+	}
+
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
