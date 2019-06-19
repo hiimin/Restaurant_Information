@@ -21,8 +21,9 @@ ArrayList<TypeDTO> tdto = tdao.getAllData();
 <%
 for(int i = 0; i < tdto.size(); i++){
 	String type = tdto.get(i).getTname();
+	int tno = tdto.get(i).getTno();
 %>
-<div><a href=""><%=type %></a></div>
+<div onclick="location.href='restaurant.jsp?&type=<%=tno%>'"><%=type %></div>
 <%
 }
 %>

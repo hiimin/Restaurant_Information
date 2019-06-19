@@ -13,14 +13,13 @@ public class RestaurantDAO {
 	private ResultSet rs;
 	
 	public RestaurantDAO() {
-		
 		url = "jdbc:oracle:thin:@localhost:1521:xe";
 		user = "test";
 		pass = "test";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(url, user, pass);
+			conn = DriverManager.getConnection(url, user, pass); 
 		}catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
@@ -45,6 +44,32 @@ public class RestaurantDAO {
 				list.add(new RestaurantDTO(rno, type, rname, addr, call));
 			}
 		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return list;
+	}
+	
+	public ArrayList<RestaurantDTO> typeRestaurant(String tno){
+		ArrayList<RestaurantDTO> list = new ArrayList<>();
+		String sql = "select * from restaurant where type = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, tno);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int rno = rs.getInt("rno");
+				int type = rs.getInt("type");
+				String rname = rs.getString("rname");
+				String addr = rs.getString("addr");
+				String call = rs.getString("call");
+				
+				list.add(new RestaurantDTO(rno, type, rname, addr, call));
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
 			System.out.println(e.getMessage());
 		}
 		
