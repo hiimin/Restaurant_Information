@@ -78,6 +78,31 @@ public class RestaurantDAO {
 		return list;
 	}
 	
+	public RestaurantDTO info(String rno) {
+		System.out.println(rno);
+		String sql = "select * from restaurant where rno = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, rno);
+			rs = pstmt.executeQuery();
+			
+			
+			rs.next();
+			int rNo = rs.getInt("rno");
+			int type = rs.getInt("type");
+			String rname = rs.getString("rname");
+			String addr = rs.getString("addr");
+			String call = rs.getString("call");
+				
+			return new RestaurantDTO(rNo, type, rname, addr, call);
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+	
 	public void close() {
 		try {
 			rs.close();

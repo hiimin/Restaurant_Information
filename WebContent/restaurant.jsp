@@ -28,7 +28,7 @@ for(int i = 0; i < typeRestaurant.size(); i++){
 	String rname = typeRestaurant.get(i).getRname();
 	String rno = String.valueOf(typeRestaurant.get(i).getRno());
 	%>
-	<tr onclick="location.href='#'">
+	<tr class="trc" onclick="location.href='restaurantInfo.jsp?&rno=<%=rno%>'">
 	<td><%=i+1 %></td>
 	<td><%=rname %></td>
 	</tr>
