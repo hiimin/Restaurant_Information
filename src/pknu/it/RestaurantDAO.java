@@ -79,16 +79,14 @@ public class RestaurantDAO {
 	}
 	
 	public RestaurantDTO info(String rno) {
-		System.out.println(rno);
 		String sql = "select * from restaurant where rno = ?";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, rno);
 			rs = pstmt.executeQuery();
-			
-			
 			rs.next();
+			
 			int rNo = rs.getInt("rno");
 			int type = rs.getInt("type");
 			String rname = rs.getString("rname");

@@ -93,7 +93,54 @@ th, td{
 .trc{
 	cursor: pointer;
 }
-/* th:first-child, td:first-child {
-	width: 100px;
+
+
+
+/* login */
+.login{
+	position: absolute;
+	top: 50%; left: 50%;
+	border-radius: 30px;
+	
+	transform: translate(-50%, -50%);
+	
+	width: 30%;
+	height: 500px;
+	margin: auto;
+	background-color:  #006F84;
+	text-align: center;
 }
- */
+
+.login form{
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.login input{
+	padding-left: 10px;
+	border-style: none;
+	margin-top: 20px;
+	width: 300px;
+	line-height: 30px;
+	border-radius: 5px;
+	
+	color: #424242;
+}
+
+.login a{
+	position: relative;
+	top: 15px; left: 5px;
+	
+	text-decoration: underline;
+	
+	padding-top: 100px;
+	padding-bottom: 5px;
+	color: white;
+}
+
+.login h1{
+	font-size: 50px;
+	position: relative;
+	top: 20px; left: 50px;
+}
