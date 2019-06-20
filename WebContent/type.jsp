@@ -11,6 +11,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="menubar.jsp"></jsp:include>
+<%
+if(session.getAttribute("id")==null)
+	response.sendRedirect("login.jsp");
+
+System.out.println(session.getAttribute("id"));
+%>
+
 <%
 TypeDAO tdao = new TypeDAO();
 ArrayList<TypeDTO> tdto = tdao.getAllData();

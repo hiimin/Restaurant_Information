@@ -102,10 +102,10 @@ th, td{
 	top: 50%; left: 50%;
 	border-radius: 30px;
 	
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -40%);
 	
-	width: 30%;
-	height: 500px;
+	width: 500px;
+	height: 600px;
 	margin: auto;
 	background-color:  #006F84;
 	text-align: center;
@@ -134,8 +134,6 @@ th, td{
 	
 	text-decoration: underline;
 	
-	padding-top: 100px;
-	padding-bottom: 5px;
 	color: white;
 }
 
@@ -143,4 +141,14 @@ th, td{
 	font-size: 50px;
 	position: relative;
 	top: 20px; left: 50px;
+}
+
+#first{
+	position: relative;
+	left: 10px;
+	color: black;
+}
+
+.button{
+	cursor: pointer;
 }

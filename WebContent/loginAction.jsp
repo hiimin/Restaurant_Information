@@ -11,8 +11,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="menubar.jsp"></jsp:include>
-<jsp:include page="type.jsp"></jsp:include>
 <%
 String id = request.getParameter("id");
 String pw = request.getParameter("pw");
@@ -23,15 +21,23 @@ int result = mdao.login(id, pw);
 
 String print;
 if(result == 1){
-	session.setMaxInactiveInterval(600);
+	session.setMaxInactiveInterval(600);	//session 10minute
 	session.setAttribute("id", id);
 	print = "환영합니다.";
+	System.out.println(print);
+	response.sendRedirect("type.jsp");
 }else if(result==-1){
 	print="비밀번호가 틀렸습니다.";
+	System.out.println(print);
+	response.sendRedirect("login.jsp");
 }else if(result==0){
 	print="존재하지 않는 아이디입니다.";
+	System.out.println(print);
+	response.sendRedirect("login.jsp");
 }else{
 	print="데이터베이스 오류";
+	System.out.println(print);
+	response.sendRedirect("login.jsp");
 }
 %>
 <%=print %>

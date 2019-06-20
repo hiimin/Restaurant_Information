@@ -13,6 +13,13 @@
 <body>
 <jsp:include page="menubar.jsp"></jsp:include>
 <%
+if(session.getAttribute("id")==null)
+	response.sendRedirect("login.jsp");
+
+System.out.println(session.getAttribute("id"));
+%>
+
+<%
 String rno = request.getParameter("rno");
 
 RestaurantDAO rdao = new RestaurantDAO();
