@@ -14,7 +14,7 @@
 <jsp:include page="menubar.jsp"></jsp:include>
 <%
 if(session.getAttribute("id")==null)
-	response.sendRedirect("login.jsp");
+	response.sendRedirect("index.jsp");
 
 System.out.println(session.getAttribute("id"));
 %>

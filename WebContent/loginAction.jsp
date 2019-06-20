@@ -29,15 +29,15 @@ if(result == 1){
 }else if(result==-1){
 	print="비밀번호가 틀렸습니다.";
 	System.out.println(print);
-	response.sendRedirect("login.jsp");
+	response.sendRedirect("index.jsp");
 }else if(result==0){
 	print="존재하지 않는 아이디입니다.";
 	System.out.println(print);
-	response.sendRedirect("login.jsp");
+	response.sendRedirect("index.jsp");
 }else{
 	print="데이터베이스 오류";
 	System.out.println(print);
-	response.sendRedirect("login.jsp");
+	response.sendRedirect("index.jsp");
 }
 %>
 <%=print %>

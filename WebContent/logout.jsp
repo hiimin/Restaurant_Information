@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%=session.getAttribute("id") %>
+<%
+session.invalidate();
+response.sendRedirect("index.jsp");
+%>
 </body>
 </html>

@@ -2,6 +2,8 @@
     pageEncoding="EUC-KR"%>
     <%@ page import="pknu.it.RestaurantDAO" %>
     <%@ page import="pknu.it.RestaurantDTO" %>
+    <%@ page import="pknu.it.MenuDAO" %>
+    <%@ page import="pknu.it.MenuDTO" %>
     <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +16,7 @@
 <jsp:include page="menubar.jsp"></jsp:include>
 <%
 if(session.getAttribute("id")==null)
-	response.sendRedirect("login.jsp");
+	response.sendRedirect("index.jsp");
 
 System.out.println(session.getAttribute("id"));
 %>
@@ -24,7 +26,19 @@ String rno = request.getParameter("rno");
 
 RestaurantDAO rdao = new RestaurantDAO();
 RestaurantDTO rdto = rdao.info(rno);
+
+MenuDAO mdao = new MenuDAO();
+ArrayList<MenuDTO> mdto = mdao.restaurantMenu(rno);
 %>
 <%=rdto.toString() %>
+<%
+for(int i = 0; i < mdto.size(); i++){
+%>
+
+<%=mdto.get(i).toString() %>
+
+<%
+}
+%>
 </body>
 </html>

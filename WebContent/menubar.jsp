@@ -17,7 +17,7 @@
 <li><a href="">메뉴 2</a></li>
 <li><a href="">메뉴 3</a></li>
 <li><a href="">메뉴 4</a></li>
-<li><a href="login.jsp">로그아웃</a></li>
+<li><a href="logout.jsp">로그아웃</a></li>
 </ul>
 </nav>
 </div>
