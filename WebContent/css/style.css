@@ -38,7 +38,11 @@ header{
 }
 
 h1{
-	color: white; line-height: 40px; float: left; 
+	color: black; line-height: 40px; float: left; 
+}
+
+.loginh1{
+	color: white; line-height: 40px; float: left;
 }
 .menu{
 	float: right;
@@ -52,6 +56,9 @@ h1{
 
 .wrapper{
 	width: 1170px; margin: 0 auto;
+}
+.wrapper h1{
+	color: white;
 }
 .clearfix{
 	content: ''; display: block; clear: both;
@@ -151,4 +158,69 @@ th, td{
 
 .button{
 	cursor: pointer;
+}
+
+
+/* retaurant information & menu */
+.rwrapper{
+	display: inline-block;
+	min-width: 1200px;
+	
+	margin-top: 10px;
+	margin-left: 150px;
+}
+
+.rname{
+	font-size: 50px;
+	font-weight: bold;
+	display: inline;
+	width: 500px;
+	float: left;
+	text-align: center;
+	
+	margin-top: 30px;
+}
+
+.rinfo{
+	diplay: inline;
+	width: 400px;
+	float: left;
+	font-size: 25px;
+	font-weight: bold;
+}
+.rinfo li{
+	list-style: circle;
+}
+
+#menu{
+	font-size: 40px;
+	font-weight: bold;
+	width: 900px;
+	margin: none;
+	margin-left: 330px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #253342;
+	
+}
+.food{
+	margin-left: 330px;
+	display: block;
+}
+
+.mname{
+	font-size: 20px;
+	font-weight: bold;
+	display: inline;
+}
+
+.mprice{
+	font-size: 20px;
+	font-weight: bold;
+	width: 600px;
+	display: inline;
+	float: right;
+}
+
+.food li{
+	margin-bottom: 10px;
 }

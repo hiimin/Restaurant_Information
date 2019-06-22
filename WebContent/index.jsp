@@ -13,7 +13,7 @@
 <body>
 <h1 id="first">부경대학교 식당 정보</h1>
 <div class="login">
-<h1>Login</h1>
+<h1 class="loginh1">Login</h1>
 <form action="loginAction.jsp" method="post">
 <input name="id" type="text" placeholder="id"><br>
 <input name="pw" type="password" placeholder="password"><br>

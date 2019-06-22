@@ -23,6 +23,18 @@ public class MenuDTO {
 		this.price = price;
 	}
 
+	public int getRno() {
+		return rno;
+	}
+
+	public String getMname() {
+		return mname;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
 	@Override
 	public String toString() {
 		return "MenuDTO [rno=" + rno + ", mname=" + mname + ", price=" + price + "]";
