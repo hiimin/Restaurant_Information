@@ -36,7 +36,8 @@
 								</div>
 								<div class="searchButton">
 									<!-- <input type="submit"> -->
-									<input type="image" src="img/search.png" name="submit" value="submit">
+									<input type="image" src="img/search.png" name="submit"
+										value="submit">
 								</div>
 							</div>
 						</form>

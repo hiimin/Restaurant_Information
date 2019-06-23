@@ -4,7 +4,7 @@ public class MenuDTO {
 	int rno;
 	String mname;
 	int price;
-	
+
 	public MenuDTO(int rno, String mname, int price) {
 		this.setRno(rno);
 		this.setMname(mname);
@@ -40,5 +40,4 @@ public class MenuDTO {
 		return "MenuDTO [rno=" + rno + ", mname=" + mname + ", price=" + price + "]";
 	}
 
-	
 }

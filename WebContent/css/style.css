@@ -22,53 +22,77 @@
 	border-left: none;
 } */
 /* header */
-*{
-	margine: 0; padding: 0;
+* {
+	padding: 0;
 }
-li{
+
+li {
 	list-style: none;
 }
-a{
+
+a {
 	text-decoration: none;
 }
-body{
+
+body {
 	font-family: "맑은 고딕";
-}
-header{
-	height: 75px; background-color: #006F84; border: 1px solid #253342;
-	width: 100%; z-index: 9999; top: 0; left: 0;
+	margin: 0;
 }
 
-h1{
-	color: black; line-height: 40px; float: left; 
+header {
+	height: 75px;
+	background-color: #006F84;
+	border: 1px solid #253342;
+	width: 100%;
+	z-index: 9999;
+	top: 0;
+	left: 0;
 }
 
-.loginh1{
-	color: white; line-height: 40px; float: left;
-}
-.menu{
-	float: right;
-}
-.menu li{
+h1 {
+	color: black;
+	line-height: 40px;
 	float: left;
 }
-.menu a{
-	line-height: 50px; color: white; padding: 0 15px; display: block;
+
+.loginh1 {
+	color: white;
+	line-height: 40px;
+	float: left;
 }
 
-.wrapper{
-	width: 1170px; margin: 0 auto;
+.menu {
+	float: right;
 }
-.wrapper h1{
+
+.menu li {
+	float: left;
+}
+
+.menu a {
+	line-height: 50px;
+	color: white;
+	padding: 0 15px;
+	display: block;
+}
+
+.wrapper {
+	width: 1170px;
+	margin: 0 auto;
+}
+
+.wrapper h1 {
 	color: white;
 }
-.clearfix{
-	content: ''; display: block; clear: both;
+
+.clearfix {
+	content: '';
+	display: block;
+	clear: both;
 }
 
-
 /* type grid layout */
-.typeWrapper{
+.typeWrapper {
 	/* padding: 75px 0px 0px 0px;	padding 간격 위 오른쪽 아래 위쪽 */
 	width: 100%;
 	display: grid;
@@ -78,13 +102,13 @@ h1{
 	vertical-align: middle;
 }
 
-.typeWrapper div{
+.typeWrapper div {
 	cursor: pointer;
-	padding: 80px 0px 0px 0px;	/* padding 간격 위 오른쪽 아래 위쪽 */
+	padding: 80px 0px 0px 0px; /* padding 간격 위 오른쪽 아래 위쪽 */
 	border: 1px solid black;
 }
 
-table{
+table {
 	width: 50%;
 	/* margin-left: auto;
 	margin-right: auto; */
@@ -93,52 +117,49 @@ table{
 	border-collapse: collapse;
 }
 
-th, td{
+th, td {
 	text-align: center;
 	padding: 10px;
 	border: 1px solid #ddd;
 }
 
-.trc{
+.trc {
 	cursor: pointer;
 }
 
-
-
 /* login */
-.login{
+.login {
 	position: absolute;
-	top: 50%; left: 50%;
+	top: 50%;
+	left: 50%;
 	border-radius: 30px;
-	
 	transform: translate(-50%, -40%);
-	
 	width: 500px;
 	height: 600px;
 	margin: auto;
-	background-color:  #006F84;
+	background-color: #006F84;
 	text-align: center;
 }
 
-.login form{
+.login form {
 	position: absolute;
-	top: 50%; left: 50%;
+	top: 50%;
+	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
-.login input{
+.login input {
 	padding-left: 10px;
 	border-style: none;
 	margin-top: 20px;
 	width: 300px;
 	line-height: 30px;
 	border-radius: 5px;
-	
 	color: #424242;
 	font-weight: bold;
 }
 
-.login select{
+.login select {
 	position: relative;
 	top: 0;
 	left: -80px;
@@ -149,69 +170,66 @@ th, td{
 	height: 28px;
 	line-height: 30px;
 	border-radius: 5px;
-	
 	color: #424242;
 	font-weight: bold;
 }
 
-.login a{
+.login a {
 	position: relative;
-	top: 15px; left: 5px;
-	
+	top: 15px;
+	left: 5px;
 	text-decoration: underline;
-	
 	color: white;
 }
 
-.login h1{
+.login h1 {
 	font-size: 50px;
 	position: relative;
-	top: 20px; left: 50px;
+	top: 20px;
+	left: 50px;
 }
 
-#first{
+#first {
 	position: relative;
 	left: 10px;
 	color: black;
 }
 
-.button{
+.button {
 	cursor: pointer;
 }
 
-
 /* retaurant information & menu */
-.rwrapper{
+.rwrapper {
 	display: inline-block;
 	min-width: 1200px;
-	
 	margin-top: 10px;
 	margin-left: 150px;
 }
 
-.rname{
+.rname {
 	font-size: 50px;
 	font-weight: bold;
 	display: inline;
 	width: 500px;
 	float: left;
 	text-align: center;
-	
 	margin-top: 30px;
 }
 
-.rinfo{
+.rinfo {
 	diplay: inline;
 	width: 400px;
 	float: left;
 	font-size: 25px;
 	font-weight: bold;
 }
-.rinfo li{
+
+.rinfo li {
 	list-style: circle;
 }
 
-#menu{
+#menu {
 	font-size: 40px;
 	font-weight: bold;
 	width: 60%;
@@ -219,20 +237,20 @@ th, td{
 	margin-left: 330px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #253342;
-	
 }
-.food{
+
+.food {
 	margin-left: 330px;
 	display: block;
 }
 
-.mname{
+.mname {
 	font-size: 20px;
 	font-weight: bold;
 	display: inline;
 }
 
-.mprice{
+.mprice {
 	font-size: 20px;
 	font-weight: bold;
 	width: 600px;
@@ -240,30 +258,30 @@ th, td{
 	float: right;
 }
 
-.food li{
+.food li {
 	margin-bottom: 10px;
 }
 
-.search{
+.search {
 	width: 200px;
 	position: relative;
 	top: 10px;
 	left: 20px;
 }
 
-.searchForm{
+.searchForm {
 	float: left;
 	width: 150px;
 	height: 30px;
 }
 
-.searchButton{
+.searchButton {
 	float: left;
 	width: 50px;
 	height: 30px;
 }
 
-.searchForm input{
+.searchForm input {
 	width: 100%;
 	height: 30px;
 	border: none;
@@ -272,7 +290,7 @@ th, td{
 	padding-left: 4px;
 }
 
-.searchButton input{
+.searchButton input {
 	width: 100%;
 	height: 30px;
 	border: none;

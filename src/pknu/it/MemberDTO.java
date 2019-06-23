@@ -5,7 +5,7 @@ public class MemberDTO {
 	String mid;
 	String mpass;
 	String mclass;
-	
+
 	public MemberDTO(int mno, String mid, String mpass, String mclass) {
 		this.setMno(mno);
 		this.setMid(mid);
