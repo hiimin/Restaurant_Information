@@ -114,6 +114,27 @@ public class RestaurantDAO {
 		}
 	}
 	
+	public void add(String type, String rname, String addr, String call) {
+		String sql = "insert into restaurant values(rnum.nextval, ?,?,?,?)";
+		
+		/*rname= "\'"+rname +"\'";
+		addr = "\'"+addr +"\'";
+		call = "\'"+call +"\'";*/
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, type);
+			pstmt.setString(2, rname);
+			pstmt.setString(3, addr);
+			pstmt.setString(4, call);
+			
+			pstmt.executeQuery();
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+	
 	public void close() {
 		try {
 			rs.close();

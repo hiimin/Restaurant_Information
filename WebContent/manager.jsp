@@ -60,7 +60,7 @@ for(int i = 0; i < typeRestaurant.size(); i++){
 <td>+</td>
 <td>음식점 추가</td>
 <td>
-<form action="">
+<form action="addRestaurant.jsp">
 <input type="submit" value="추가">
 </form>
 </td>

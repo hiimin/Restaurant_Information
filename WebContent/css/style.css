@@ -135,6 +135,23 @@ th, td{
 	border-radius: 5px;
 	
 	color: #424242;
+	font-weight: bold;
+}
+
+.login select{
+	position: relative;
+	top: 0;
+	left: -80px;
+	padding-left: 10px;
+	border-style: none;
+	margin-top: 20px;
+	width: 150px;
+	height: 28px;
+	line-height: 30px;
+	border-radius: 5px;
+	
+	color: #424242;
+	font-weight: bold;
 }
 
 .login a{
