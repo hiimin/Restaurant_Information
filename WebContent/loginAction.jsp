@@ -21,8 +21,11 @@ int result = mdao.login(id, pw);
 
 String print;
 if(result == 1){
+	String mclass = mdao.getClass(id);
+	
 	session.setMaxInactiveInterval(600);	//session 10minute
 	session.setAttribute("id", id);
+	session.setAttribute("class", mclass);
 	print = "환영합니다.";
 	System.out.println(print);
 	response.sendRedirect("type.jsp");

@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1 id="first">부경대학교 식당 정보</h1>
+<h1 id="first">부경대학교 음식점 정보</h1>
 <div class="login">
 <h1 class="loginh1">Login</h1>
 <form action="loginAction.jsp" method="post">

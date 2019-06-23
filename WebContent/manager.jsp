@@ -22,29 +22,30 @@ else{
 %>
 
 <%
-String type = request.getParameter("type");
-
 RestaurantDAO rdao = new RestaurantDAO();
 ArrayList<RestaurantDTO> typeRestaurant;
-if(type!=null){
-	typeRestaurant = rdao.typeRestaurant(type);
-}else{
-	typeRestaurant = rdao.getAllData();
-}
+
+typeRestaurant = rdao.getAllData();
 %>
 <table border=1>
 <tr>
 <th>No.</th>
 <th>음식점명</th>
+<th>삭제</th>
 </tr>
 <%
 for(int i = 0; i < typeRestaurant.size(); i++){
 	String rname = typeRestaurant.get(i).getRname();
 	String rno = String.valueOf(typeRestaurant.get(i).getRno());
 	%>
-	<tr class="trc" onclick="location.href='restaurantInfo.jsp?&rno=<%=rno%>'">
+	<tr>
 	<td><%=i+1 %></td>
-	<td><%=rname %></td>
+	<td><a href="restaurantInfo.jsp?&rno=<%=rno%>"><%=rname %></a></td>
+	<td>
+	<form action="">
+	<input type="submit" value="삭제">
+	</form>
+	</td>
 	</tr>
 <%
 }
@@ -52,6 +53,15 @@ for(int i = 0; i < typeRestaurant.size(); i++){
 
 
 <%} %>
+<tr>
+<td>+</td>
+<td>음식점 추가</td>
+<td>
+<form action="">
+<input type="submit" value="추가">
+</form>
+</td>
+</tr>
 </table>
 </body>
 </html>

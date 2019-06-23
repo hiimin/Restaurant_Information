@@ -31,7 +31,9 @@ li{
 a{
 	text-decoration: none;
 }
-
+body{
+	font-family: "¸¼Àº °íµñ";
+}
 header{
 	height: 75px; background-color: #006F84; border: 1px solid #253342;
 	width: 100%; z-index: 9999; top: 0; left: 0;
@@ -195,7 +197,7 @@ th, td{
 #menu{
 	font-size: 40px;
 	font-weight: bold;
-	width: 900px;
+	width: 60%;
 	margin: none;
 	margin-left: 330px;
 	padding-bottom: 10px;

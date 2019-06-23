@@ -72,5 +72,20 @@ public class MemberDAO {
 		return -2;			//db error
 	}
 	
-	
+	public String getClass(String userID) {
+		String sql = "select mclass from member where mid = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			
+			rs.next();
+			return rs.getString("mclass");
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		
+		return null;
+	}
 }
