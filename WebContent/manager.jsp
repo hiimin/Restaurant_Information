@@ -42,9 +42,12 @@ for(int i = 0; i < typeRestaurant.size(); i++){
 	<td><%=i+1 %></td>
 	<td><a href="restaurantInfo.jsp?&rno=<%=rno%>"><%=rname %></a></td>
 	<td>
-	<form action="">
+	<button>
+	<a href="deleteRestaurant.jsp?&rno=<%=rno%>">삭제</a>
+	</button>
+	<%-- <form action="deleteRestaurant.jsp?&rno=<%=rno%>">
 	<input type="submit" value="삭제">
-	</form>
+	</form> --%>
 	</td>
 	</tr>
 <%

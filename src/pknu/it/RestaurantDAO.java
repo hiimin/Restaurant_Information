@@ -101,6 +101,19 @@ public class RestaurantDAO {
 		return null;
 	}
 	
+	public void delete(String rno) {
+		String sql = "delete from restaurant where rno = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, rno);
+			pstmt.executeQuery();
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+	
 	public void close() {
 		try {
 			rs.close();
