@@ -3,8 +3,6 @@ package pknu.it;
 import java.sql.*;
 import java.util.ArrayList;
 
-import com.sun.xml.internal.ws.Closeable;
-
 public class RestaurantDAO {
 	
 	private String url;
@@ -117,10 +115,6 @@ public class RestaurantDAO {
 	public void add(String type, String rname, String addr, String call) {
 		String sql = "insert into restaurant values(rnum.nextval, ?,?,?,?)";
 		
-		/*rname= "\'"+rname +"\'";
-		addr = "\'"+addr +"\'";
-		call = "\'"+call +"\'";*/
-		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, type);
@@ -133,6 +127,33 @@ public class RestaurantDAO {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
 		}
+	}
+	
+	public ArrayList<RestaurantDTO> search(String word){
+		ArrayList<RestaurantDTO> list = new ArrayList<>();
+		String sql = "select * from restaurant where rname like ?";
+		word = "%" + word + "%";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, word);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int rno = rs.getInt("rno");
+				int type = rs.getInt("type");
+				String rname = rs.getString("rname");
+				String addr = rs.getString("addr");
+				String call = rs.getString("call");
+				
+				list.add(new RestaurantDTO(rno, type, rname, addr, call));
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		
+		return list;
 	}
 	
 	public void close() {
