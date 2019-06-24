@@ -258,6 +258,11 @@ th, td {
 	float: right;
 }
 
+.mdelete{
+	display: inline;
+	width: 30px;
+}
+
 .food li {
 	margin-bottom: 10px;
 }

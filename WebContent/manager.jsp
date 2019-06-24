@@ -40,7 +40,7 @@
 		%>
 		<tr>
 			<td><%=i + 1%></td>
-			<td><a href="restaurantInfo.jsp?&rno=<%=rno%>"><%=rname%></a></td>
+			<td><a href="restaurantInfo_m.jsp?&rno=<%=rno%>"><%=rname%></a></td>
 			<td>
 				<button>
 					<a href="deleteRestaurant.jsp?&rno=<%=rno%>">ªË¡¶</a>
