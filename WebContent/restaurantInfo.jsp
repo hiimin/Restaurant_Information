@@ -45,6 +45,7 @@ for(int i = 0; i < redto.size(); i++){
 	sum += grade;
 }
 avgGrade = sum/redto.size();
+avgGrade = Math.round(avgGrade*100)/100.0;
 %>
 <div class="rwrapper">
 
