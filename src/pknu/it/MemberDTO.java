@@ -33,4 +33,5 @@ public class MemberDTO {
 	public void setMclass(String mclass) {
 		this.mclass = mclass;
 	}
+
 }

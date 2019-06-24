@@ -8,17 +8,16 @@
 <head>
 <meta charset="EUC-KR">
 <link rel = "stylesheet" type="text/css" href="css/style.css">
-<title>Insert title here</title>
+<title>부경대학교 음식점 정보</title>
 </head>
 <body>
 <h1 id="first">부경대학교 음식점 정보</h1>
 <div class="login">
-<h1 class="loginh1">Login</h1>
-<form action="loginAction.jsp" method="post">
-<input name="id" type="text" placeholder="id"><br>
-<input name="pw" type="password" placeholder="password"><br>
-<input class="button" type="submit" value="로그인">
-<a href="addMember.jsp">회원가입</a>
+<h1 class="loginh1">회원가입</h1>
+<form name="addMember" action="addMemberAction.jsp" method="POST">
+<input name="mid" type="text" placeholder="아이디"><br>
+<input name="mpass" type="text" placeholder="비밀번호"><br>
+<input class="button" type="submit" value="가입">
 </form>
 </div>
 </body>

@@ -21,7 +21,7 @@ public class TypeDAO {
 		ResultSet result = null;
 		
 		try {
-			connect = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "test", "test");
+			connect = DriverManager.getConnection("jdbc:oracle:thin:@localhost:32781:xe", "test", "test");
 			state = connect.createStatement();
 			result = state.executeQuery("select * from type");
 			

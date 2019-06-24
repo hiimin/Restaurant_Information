@@ -15,7 +15,7 @@ public class RestaurantDAO {
 	private ResultSet rs;
 	
 	public RestaurantDAO() {
-		url = "jdbc:oracle:thin:@localhost:1521:xe";
+		url = "jdbc:oracle:thin:@localhost:32781:xe";
 		user = "test";
 		pass = "test";
 		
@@ -99,6 +99,22 @@ public class RestaurantDAO {
 			System.out.println(e.getMessage());
 		}
 		return null;
+	}
+	public int getRno(String rname) {
+		String sql = "select * from restaurant where rname = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, rname);
+			rs = pstmt.executeQuery();
+			
+			rs.next();
+			return rs.getInt("rno");
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		
+		return -1;
 	}
 	
 	public void delete(String rno) {

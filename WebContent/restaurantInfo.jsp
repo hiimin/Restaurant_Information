@@ -4,6 +4,8 @@
     <%@ page import="pknu.it.RestaurantDTO" %>
     <%@ page import="pknu.it.MenuDAO" %>
     <%@ page import="pknu.it.MenuDTO" %>
+    <%@ page import="pknu.it.ReviewDAO" %>
+    <%@ page import="pknu.it.ReviewDTO" %>
     <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
@@ -33,6 +35,16 @@ String rcall = rdto.getCall();
 
 MenuDAO mdao = new MenuDAO();
 ArrayList<MenuDTO> mdto = mdao.restaurantMenu(rno);
+
+ReviewDAO redao = new ReviewDAO();
+ArrayList<ReviewDTO> redto = redao.restaurantReview(rno);
+double sum=0;
+double avgGrade;
+for(int i = 0; i < redto.size(); i++){
+	int grade = redto.get(i).getGrade();
+	sum += grade;
+}
+avgGrade = sum/redto.size();
 %>
 <div class="rwrapper">
 
@@ -44,7 +56,8 @@ ArrayList<MenuDTO> mdto = mdao.restaurantMenu(rno);
 <ul>
 <li>주소 : <%=raddr %></li>
 <li>전화번호 : <%=rcall %></li>
-<li>평점 : <%=9.3 %></li>
+<li>리뷰평점 : <%=avgGrade %> <a href="review.jsp?&rno=<%=rno %>"> (<%=redto.size() %>)</a>
+<a href="addReview.jsp?rno=<%=rno%>">+</a></li>
 </ul>
 </div>
 
@@ -52,7 +65,7 @@ ArrayList<MenuDTO> mdto = mdao.restaurantMenu(rno);
 </div>
 
 <p id="menu">
-menu
+Menu
 </p>
 
 <div class="food">

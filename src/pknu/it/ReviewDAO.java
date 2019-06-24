@@ -3,9 +3,8 @@ package pknu.it;
 import java.sql.*;
 import java.util.ArrayList;
 
-import com.sun.org.apache.xml.internal.security.keys.content.RetrievalMethod;
-
-public class MenuDAO {
+public class ReviewDAO {
+	
 	private String url;
 	private String user;
 	private String pass;
@@ -13,7 +12,8 @@ public class MenuDAO {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	
-	public MenuDAO() {
+	public ReviewDAO() {
+		
 		url = "jdbc:oracle:thin:@localhost:32781:xe";
 		user = "test";
 		pass = "test";
@@ -27,21 +27,21 @@ public class MenuDAO {
 		}
 	}
 	
-	public ArrayList<MenuDTO> getAllData(){
-		ArrayList<MenuDTO> list = new ArrayList<>();
-		String sql = "select * from menu"; 
-		
+	public ArrayList<ReviewDTO> getAllData(){
+		ArrayList<ReviewDTO> list = new ArrayList();
+		String sql = "select * from review";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
+				int mno = rs.getInt("mno");
 				int rno = rs.getInt("rno");
-				String mname = rs.getString("mname");
-				int price = rs.getInt("price");
+				int vno = rs.getInt("vno");
+				int grade = rs.getInt("grade");
 				
-				list.add(new MenuDTO(rno, mname, price));
+				list.add(new ReviewDTO(mno, rno, vno, grade));
 			}
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
@@ -50,9 +50,9 @@ public class MenuDAO {
 		return list;
 	}
 	
-	public ArrayList<MenuDTO> restaurantMenu(String rno){
-		ArrayList<MenuDTO> list = new ArrayList<>();
-		String sql = "select * from menu where rno = ?";
+	public ArrayList<ReviewDTO> restaurantReview(String rno){
+		ArrayList<ReviewDTO> list = new ArrayList<>();
+		String sql = "select * from review where rno = ?";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -60,11 +60,12 @@ public class MenuDAO {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
+				int mno = rs.getInt("mno");
 				int rnum = rs.getInt("rno");
-				String mname = rs.getString("mname");
-				int price = rs.getInt("price");
+				int vno = rs.getInt("vno");
+				int grade = rs.getInt("grade");
 				
-				list.add(new MenuDTO(rnum, mname, price));
+				list.add(new ReviewDTO(mno, rnum, vno, grade));
 			}
 		}catch (Exception e) {
 			// TODO: handle exception
@@ -73,4 +74,21 @@ public class MenuDAO {
 		
 		return list;
 	}
+	public void add(int mno, int rno, int grade) {
+		String sql = "insert into review values(?,?,rnum.nextval,?)";
+		
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(0, mno);
+			pstmt.setInt(1, rno);
+			pstmt.setInt(3, grade);
+			
+			pstmt.executeQuery();
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+	
 }

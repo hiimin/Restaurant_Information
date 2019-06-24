@@ -14,7 +14,7 @@ public class MemberDAO {
 	
 	public MemberDAO() {
 		
-		url = "jdbc:oracle:thin:@localhost:1521:xe";
+		url = "jdbc:oracle:thin:@localhost:32781:xe";
 		user = "test";
 		pass = "test";
 		
@@ -71,7 +71,22 @@ public class MemberDAO {
 		}
 		return -2;			//db error
 	}
-	
+	public int getMno(String userID) {
+		String sql = "select mno from member where mid = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			
+			rs.next();
+			return rs.getInt("mno");
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		
+		return -1;
+	}
 	public String getClass(String userID) {
 		String sql = "select mclass from member where mid = ?";
 		try {
@@ -87,5 +102,24 @@ public class MemberDAO {
 		}
 		
 		return null;
+	}
+	public void add(String mid, String mpass, String mclass) {
+		String sql = "insert into member values(mem_seq.nextval,?,?,?)";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mid);
+			pstmt.setString(2, mpass);
+			pstmt.setString(3, mclass);
+			System.out.println("======result======");
+			
+			pstmt.executeQuery();
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+	public void delete(String mno) {
+		
 	}
 }

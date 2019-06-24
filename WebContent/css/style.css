@@ -21,25 +21,32 @@
 #nav_menu ul li:first-child {
 	border-left: none;
 } */
+
+/* font */
+@import url('https://fonts.googleapis.com/css?family=Gamja+Flower&display=swap');
+
 /* header */
 *{
+	font-family: 'Gamja Flower';
 	margine: 0; padding: 0;
 }
 li{
+	font-family: 'Gamja Flower';
 	list-style: none;
 }
 a{
+	font-family: 'Gamja Flower';
 	text-decoration: none;
 }
-body{
-	font-family: "맑은 고딕";
-}
+
 header{
+	font-family: 'Gamja Flower';
 	height: 75px; background-color: #006F84; border: 1px solid #253342;
 	width: 100%; z-index: 9999; top: 0; left: 0;
 }
 
 h1{
+	font-family: 'Gamja Flower';
 	color: black; line-height: 40px; float: left; 
 }
 
@@ -75,6 +82,7 @@ h1{
 	grid-template-columns: repeat(3, 1fr);
 	grid-auto-rows: 200px;
 	text-align: center;
+	font-size: 30px;
 	vertical-align: middle;
 }
 
@@ -83,8 +91,16 @@ h1{
 	padding: 80px 0px 0px 0px;	/* padding 간격 위 오른쪽 아래 위쪽 */
 	border: 1px solid black;
 }
+.typeWrapper img{
+	border:3px solid red;
+	width: 40px;
+	heidht: 40px;
+	align: conter;
+	alt: '이미지 준비중' 
+}
 
 table{
+	font-family: 'Gamja Flower', sans-serif;
 	width: 50%;
 	/* margin-left: auto;
 	margin-right: auto; */
@@ -92,8 +108,16 @@ table{
 	border-top: 3px solid #444444;
 	border-collapse: collapse;
 }
-
-th, td{
+th{
+	font-family: 'Gamja Flower';
+	font-size: 20px;
+	text-align: center;
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+td{
+	font-family: 'Gamja Flower';
+	font-size: 15px;
 	text-align: center;
 	padding: 10px;
 	border: 1px solid #ddd;
@@ -107,6 +131,7 @@ th, td{
 
 /* login */
 .login{
+	font-family: 'Gamja Flower';
 	position: absolute;
 	top: 50%; left: 50%;
 	border-radius: 30px;
@@ -127,31 +152,15 @@ th, td{
 }
 
 .login input{
+	font-size: 20px;
 	padding-left: 10px;
 	border-style: none;
 	margin-top: 20px;
 	width: 300px;
-	line-height: 30px;
+	line-height: 50px;
 	border-radius: 5px;
 	
 	color: #424242;
-	font-weight: bold;
-}
-
-.login select{
-	position: relative;
-	top: 0;
-	left: -80px;
-	padding-left: 10px;
-	border-style: none;
-	margin-top: 20px;
-	width: 150px;
-	height: 28px;
-	line-height: 30px;
-	border-radius: 5px;
-	
-	color: #424242;
-	font-weight: bold;
 }
 
 .login a{
@@ -164,9 +173,15 @@ th, td{
 }
 
 .login h1{
-	font-size: 50px;
+	font-size: 60px;
 	position: relative;
 	top: 20px; left: 50px;
+}
+.login h2{
+	font-size: 40px;
+	position: relative;
+	top: 10px; 
+	color: white;
 }
 
 #first{
@@ -190,6 +205,7 @@ th, td{
 }
 
 .rname{
+	font-family: 'Gamja Flower';
 	font-size: 50px;
 	font-weight: bold;
 	display: inline;
@@ -201,20 +217,23 @@ th, td{
 }
 
 .rinfo{
+	font-family: 'Gamja Flower';
+	font-size: 25px;
+	font-weight: bold;
 	diplay: inline;
 	width: 400px;
 	float: left;
-	font-size: 25px;
-	font-weight: bold;
+	
 }
 .rinfo li{
 	list-style: circle;
 }
 
 #menu{
+	font-family: 'Gamja Flower';
 	font-size: 40px;
 	font-weight: bold;
-	width: 60%;
+	width: 900px;
 	margin: none;
 	margin-left: 330px;
 	padding-bottom: 10px;
@@ -222,17 +241,20 @@ th, td{
 	
 }
 .food{
+	font-family: 'Gamja Flower';
 	margin-left: 330px;
 	display: block;
 }
 
 .mname{
+	font-family: 'Gamja Flower';
 	font-size: 20px;
 	font-weight: bold;
 	display: inline;
 }
 
 .mprice{
+	font-family: 'Gamja Flower';
 	font-size: 20px;
 	font-weight: bold;
 	width: 600px;
@@ -242,4 +264,20 @@ th, td{
 
 .food li{
 	margin-bottom: 10px;
+}
+
+/* review */
+.review{
+	font-family: 'Gamja Flower';
+	position: absolute;
+	top: 50%; left: 50%;
+	border-radius: 30px;
+	
+	transform: translate(-50%, -40%);
+	
+	width: 500px;
+	height: 600px;
+	margin: auto;
+	background-color:  #006F84;
+	text-align: center;
 }
