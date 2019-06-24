@@ -73,4 +73,33 @@ public class MenuDAO {
 		
 		return list;
 	}
+	
+	public void delete(String mname) {
+		String sql = "delete from menu where mname = ?";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mname);
+			pstmt.executeQuery();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public void add(String rno, String mname, String price) {
+		String sql = "insert into menu values(?,?,?)";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, rno);
+			pstmt.setString(2, mname);
+			pstmt.setString(3, price);
+
+			pstmt.executeQuery();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
 }

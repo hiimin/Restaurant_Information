@@ -70,7 +70,7 @@
 					</div>
 					<div class="mdelete">
 					<button>
-					<a href="deleteMenu.jsp?&mname=<%=mname%>">삭제</a>
+					<a href="deleteMenu.jsp?&mname=<%=mname%>&rno=<%=rno%>">삭제</a>
 				</button>
 					</div>
 				</div>
