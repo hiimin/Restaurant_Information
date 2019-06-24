@@ -87,6 +87,21 @@ public class MemberDAO {
 		
 		return -1;
 	}
+	public String getMid(int mno) {
+		String sql = "select mid from member where mno = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, mno);
+			rs = pstmt.executeQuery();
+			
+			rs.next();
+			return rs.getString("mid");
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
 	public String getClass(String userID) {
 		String sql = "select mclass from member where mid = ?";
 		try {

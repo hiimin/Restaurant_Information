@@ -75,13 +75,13 @@ public class ReviewDAO {
 		return list;
 	}
 	public void add(int mno, int rno, int grade) {
-		String sql = "insert into review values(?,?,rnum.nextval,?)";
+		String sql = "insert into review values(?,?,review_seq.nextval,?)";
 		
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(0, mno);
-			pstmt.setInt(1, rno);
+			pstmt.setInt(1, mno);
+			pstmt.setInt(2, rno);
 			pstmt.setInt(3, grade);
 			
 			pstmt.executeQuery();
