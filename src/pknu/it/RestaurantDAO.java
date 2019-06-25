@@ -131,7 +131,7 @@ public class RestaurantDAO {
 	}
 	
 	public void add(String type, String rname, String addr, String call) {
-		String sql = "insert into restaurant values(rnum.nextval, ?,?,?,?)";
+		String sql = "insert into restaurant values(res_seq.nextval, ?,?,?,?)";
 		
 		/*rname= "\'"+rname +"\'";
 		addr = "\'"+addr +"\'";
